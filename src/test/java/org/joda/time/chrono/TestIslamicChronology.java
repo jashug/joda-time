@@ -320,6 +320,13 @@ public class TestIslamicChronology extends TestCase {
                 .getDifferenceAsLong(1539153180000L, 1484720548000L));
     }
 
+    public void testDurationFieldcompareTo() {
+        assertFalse(ISLAMIC_UTC.eras().compareTo(ISLAMIC_UTC.seconds()) == 0);
+        assertTrue("Substitute", !(ISLAMIC_UTC.eras().compareTo(ISLAMIC_UTC.seconds()) == 0) ||
+                (Math.signum(ISLAMIC_UTC.eras().compareTo(ISLAMIC_UTC.millis())) ==
+                (Math.signum(ISLAMIC_UTC.seconds().compareTo(ISLAMIC_UTC.millis())))));
+    }
+
     //-----------------------------------------------------------------------
     /**
      * Tests era, year, monthOfYear, dayOfMonth and dayOfWeek.
