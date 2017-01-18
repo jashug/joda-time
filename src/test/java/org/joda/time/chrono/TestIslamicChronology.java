@@ -315,6 +315,12 @@ public class TestIslamicChronology extends TestCase {
     }
 
     //-----------------------------------------------------------------------
+    public void testGetYearDifference() {
+        assertEquals(1, ISLAMIC_UTC.year()
+                .getDifferenceAsLong(1539153180000L, 1484720548000L));
+    }
+
+    //-----------------------------------------------------------------------
     /**
      * Tests era, year, monthOfYear, dayOfMonth and dayOfWeek.
      */
