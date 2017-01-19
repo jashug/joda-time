@@ -21,6 +21,7 @@ import java.util.TimeZone;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import junit.framework.JUnit4TestAdapter;
 
 /**
  * Entry point for all tests in Joda-Time.
@@ -40,6 +41,7 @@ public class TestAllPackages extends TestCase {
         suite.addTest(org.joda.time.field.TestAll.suite());
         suite.addTest(org.joda.time.format.TestAll.suite());
         suite.addTest(org.joda.time.tz.TestAll.suite());
+        suite.addTest(new JUnit4TestAdapter(org.joda.time.randoop.RegressionTest.class));
         return suite;
     }
 
